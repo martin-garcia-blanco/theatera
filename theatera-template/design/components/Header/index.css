@@ -1,0 +1,62 @@
+button,
+input[type=submit],
+input[type=reset] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.header {
+    padding: .5vh 4vw;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffad87;
+}
+
+.header__image {
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50%;
+    border: solid 2px white;
+}
+
+.header__search {
+    width: 55vw;
+    border: none;
+}
+
+.header__search .search__bar {
+    width: 100%;
+    border: none;
+    height: 2rem;
+    padding: 1.1rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+
+.header__messages {
+    width: 10vw;
+}
+
+.header__messages .messages__buton i {
+    font-size: 1.5rem;
+    color: white;
+    border: 0.5vw solid white;
+    border-radius: 100%;
+    padding: 1vw;
+}
+
+
+/*# sourceMappingURL=index.css.map */

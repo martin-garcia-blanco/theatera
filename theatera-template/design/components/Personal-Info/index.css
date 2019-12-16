@@ -1,0 +1,131 @@
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="text"],
+textarea {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.personal-info {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: .6rem .6rem 0rem .6rem;
+    background-color: #fccfb23d;
+}
+
+.post__header {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem
+}
+
+.post__header .header-info {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+}
+
+.post__header .header-info .header-item {
+    margin: .1rem;
+}
+
+.header__user-username {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.post__header .post-image {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    border: solid 2px white;
+}
+
+.post__nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: .3rem
+}
+
+.post__main {
+    padding: .5rem
+}
+
+.post__interactions {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    border-top: 2px solid #ffad87;
+    border-bottom: 2px solid #ffad87;
+}
+
+.header__date {
+    font-size: .7rem;
+}
+
+
+/* nav  */
+
+.account-details__header__nav {
+    padding: .8rem 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons .button {
+    display: flex;
+    align-items: center;
+    padding: .3rem;
+    border: solid thin white;
+    border-radius: .5rem;
+    background-color: #ffad87;
+    font-weight: 700;
+    color: white;
+}
+
+.info-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-form__label {
+    display: flex;
+    justify-content: flex-start;
+    margin: .2rem
+}
+
+.info-form__label span {
+    width: 6rem;
+}
+
+.info-form__label input,
+.info-form__label textarea {
+    background-color: #ffad8763;
+    padding: .4rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    width: 80vw;
+    color: grey;
+}
+
+.info-form__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
+}
+
+.info-form__buttons .button {
+    margin: 0 .3rem;
+}

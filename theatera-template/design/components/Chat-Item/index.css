@@ -1,0 +1,124 @@
+button,
+input[type=submit],
+input[type=reset],
+input[type=text],
+input[type=date],
+textarea {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.post {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem 0.6rem 0rem 0.6rem;
+    background-color: #fffdf9;
+    margin-top: 1rem;
+}
+
+.post__nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.2rem;
+}
+
+.post__main {
+    padding: 0.3rem;
+}
+
+.post__interactions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem;
+    border-top: 2px solid #ffad87;
+    border-bottom: 2px solid #ffad87;
+}
+
+.post__header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.post__header .header-info {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    /* &__date 
+    *  font-size: .7rem */
+}
+
+.post__header .header-info .header-item {
+    margin: 0.1rem;
+}
+
+.post__header .header-info .header__user-username {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.post__header .post-image {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    border: solid 2px white;
+}
+
+.header__date {
+    font-size: 0.7rem;
+    color: grey;
+}
+
+.header__user-introduction {
+    color: grey;
+}
+
+
+/*# sourceMappingURL=index.css.map */
+
+.comment {
+    display: flex;
+    padding: .6rem .6rem 0rem .6rem;
+    justify-content: space-around;
+}
+
+.comment__image {
+    width: 12vw;
+    height: 12vw;
+    border-radius: 100%;
+}
+
+.comment__text {
+    background-color: #a7a5a434;
+    width: 80vw;
+    padding: .5rem;
+    border-radius: 3vw;
+}
+
+.comment__text .text__user-name {
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.comment__text .text__user-info font-size: .8rem;
+{
+    color: rgb(82, 77, 77);
+}
+
+.comment__text .text__date font-size: .8rem;
+{
+    color: rgb(82, 77, 77);
+}
+
+.comment__text .text__comment {
+    margin-top: .3rem;
+}
+
+.comment--mine .comment__text {
+    background-color: #b4e49e9c;
+}

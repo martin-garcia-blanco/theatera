@@ -1,0 +1,179 @@
+
+> theatera-api@1.0.0 test /home/martingarcia/Desktop/theatera-api/theatera-api
+> npx mocha logic/**/*.spec.js
+
+mongodb://localhost:27017/theatera-test
+
+
+  logic - areThereNews
+    ✓ Notifications Should be the same than the creation
+    ✓ Notifications Should be all true because of a fake retrieveNews
+    ✓ should fail on unexisting user 
+    ✓ should fail on incorrect userId
+
+  logic - authenticate user
+    ✓ should succeed on correct credentials (108ms)
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+    when wrong credentials
+      ✓ should fail on wrong email
+      ✓ should fail on wrong email
+      ✓ should fail on wrong password (110ms)
+
+  logic - checkFriendRequest
+    ✓ should succeed on initial step into the handshake, request from user to friend
+    ✓ repeat friendRequest from user to friend
+    ✓ friendRequest from friend to user, so they are going to get connected after friendRequest
+    ✓ should fail on incorrect emitter objectId
+    ✓ should fail on incorrect receiver objectId
+    ✓ should fail on notFound receiver objectId
+    ✓ should fail on notFound emitter objectId
+    ✓ should fail on incorrect userId and postId
+
+  logic - retrieve-personal-info
+    ✓ should succeed on correct user id
+    ✓ should fail on wrong user id
+    ✓ should fail on wrong user id
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+
+  logic - createExperienceItem
+    ✓ Should succed on correct task
+
+  logic - createPost
+    ✓ Should succed on correct post
+    ✓ should fail on unexisting user and correct post
+    ✓ should fail on incorrect userId, body and type
+
+  logic - createSkillItem
+    ✓ Should succed on correct skill
+    ✓ should fail on unexisting user and correct skill
+    ✓ should fail on correct user and existing the same skill
+
+  logic - register user
+    ✓ should succeed on correct credentials (265ms)
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+    when user already exists
+      ✓ should fail on already existing user
+
+  logic - removeConnection
+    ✓ Should succed removing connection
+    ✓ should fail on unexisting first user id 
+    ✓ should fail on unexisting second user id 
+    ✓ should fail on incorrect first and second users
+
+  logic - removeExperienceItem
+    ✓ Should succed on correct experience
+    ✓ should fail on unexisting user and correct experience
+    ✓ should fail on correct user and unexisting experience data
+
+  logic - removeNotification
+    ✓ Should succed on correct notification removing
+    ✓ should fail on unexisting user
+    ✓ should fail on incorrect userId and postId
+
+  logic - removePost
+    ✓ Should succed on correct post
+    ✓ should fail on unexisting user and correct post
+    ✓ should fail on correct user and unexisting post data
+    ✓ should fail on incorrect userId and postId
+
+  logic - createskillItem
+    ✓ Should succed on correct skill
+    ✓ should fail on unexisting user and correct skill
+    ✓ should fail on correct user and unexisting skill data
+    ✓ should fail on incorrect user objectId
+
+  logic - retrieve-complete-user
+    ✓ should return a correct chat
+    ✓ should throw an NotFoundError because chat doesnt exist
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+
+  logic - retrieveChats
+    ✓ should return a correct chat
+    ✓ should throw an NotFoundError because chat doesnt exist
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+
+  logic - retrieve-complete-user
+    ✓ should succeed on correct user id, PERSON
+    ✓ should succeed on correct user id, COMPANY
+    ✓ should fail on wrong user id
+    ✓ should fail on incorrect userId and postId
+
+  logic - retrieveConnections
+    ✓ should succeed on correct friend
+    ✓ should succeed on user without friend
+
+  logic - retrieveFriendRequest
+    ✓ should succeed on more than 0 friendRequests 
+    ✓ should succeed on 0 friendRequests 
+    ✓ should fail on wrong user id
+    ✓ should fail on incorrect receiver objectId
+
+  logic - retrieve-user-posts
+    ✓ should succeed on correct posts
+    ✓ should fail on wrong user userId
+    ✓ should fail on wrong empty array 
+    ✓ should fail on wrong user userId
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+
+  logic - retrieveNews
+    ✓ should succeed on array of news
+    ✓ should succeed on user without friend
+    ✓ should throw an NotFoundError because user doesnt exist
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+
+  logic - retrieve-personal-info
+    ✓ should succeed on correct user id
+    ✓ should succeed on correct user id
+    ✓ should fail on wrong user id
+
+  logic - retrieve-post
+    ✓ should succeed on correct postId
+    ✓ should fail on wrong postID
+    ✓ should fail on incorrect userId and postId
+
+  logic - retrieve-summary-user
+    ✓ should succeed on correct user id
+    ✓ should fail on wrong user id
+
+  logic - retrieve-user-posts
+5df20b3f9377392098b6cf52
+    ✓ should succeed on correct posts
+    ✓ should fail on wrong user userId
+    ✓ should fail on wrong user userId
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+
+  logic - retrieve user
+    ✓ should succeed on correct user id
+    ✓ should fail on wrong user id
+
+  logic - search
+    ✓ should succeed on correct user id
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+
+  logic - sendComment
+    ✓ Should succed on sended comment
+    ✓ should fail on unexisting user and correct post
+    ✓ should fail on unexisting user and correct post
+    ✓ should fail on incorrect userId and postId
+
+  logic - sendMessage
+    ✓ should return a correct chat
+    ✓ should throw an NotFoundError because chat doesnt exist
+    ✓ should throw an NotFoundError because user doesnt exist
+    ✓ should fail on incorrect name, surname, email, password, or expression type and content
+
+  logic - toggleLikePost
+    ✓ Should succed on add like to post
+    ✓ Should succed on remove like to post
+    ✓ should fail on unexisting user and correct post
+    ✓ should fail on unexisting user and correct post
+    ✓ should fail on incorrect userId and postId
+
+  logic - updateUser
+    ✓ should succeed on correct user 
+    ✓ should fail on unexisting user and correct task data
+    ✓ should fail on unexisting user and correct task data
+
+
+  106 passing (2s)
+

@@ -1,0 +1,49 @@
+.post
+    width: 100vw
+    display: flex
+    flex-direction: column
+    padding: .6rem .6rem 0rem .6rem
+    background-color: #fffdf9
+    margin-top: 1rem  
+    padding-bottom: 1rem
+
+    &__nav 
+        display: flex
+        justify-content: space-around
+        margin-top: .2rem
+
+    &__main 
+        padding: .3rem
+
+    &__interactions 
+        display: flex
+        justify-content: space-between
+        padding: .3rem
+        border-top: 2px solid #ffad87
+        border-bottom: 2px solid #ffad87
+
+    &__header 
+        display: flex
+        justify-content: space-around
+        & .header-info 
+            display: flex
+            flex-direction: column
+            width: 70vw
+            /* &__date 
+                font-size: .7rem */
+            & .header-item 
+                margin: .1rem
+            & .header__user-username 
+                font-weight: bold
+                font-size: 1.1rem
+        & .post-image 
+            width: 15vw
+            height: 15vw
+            border-radius: 50%
+            border: solid 2px white
+    
+.header__date 
+    font-size: .7rem
+    color: grey
+.header__user-introduction
+    color: grey
