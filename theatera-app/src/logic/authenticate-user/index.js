@@ -1,10 +1,9 @@
-//const call = require('../../utils/call')
-import call from '../../utils/call'
+const call = require('../../utils/call')
 const { validate, errors: { CredentialsError } } = require('theatera-util')
 const API_URL = process.env.REACT_APP_API_URL
 
-//module.exports = function(email, password) {
-export default function(email, password) {
+module.exports = function(email, password) {
+
     validate.string(email)
     validate.string.notVoid('email', email)
     validate.string(password)

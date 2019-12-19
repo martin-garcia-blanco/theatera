@@ -1,10 +1,8 @@
-//const call = require('../../utils/call')
-import call from '../../utils/call'
+const call = require('../../utils/call')
 const { validate, errors: { NotFoundError } } = require('theatera-util')
 const API_URL = process.env.REACT_APP_API_URL
 
-//module.exports = function(token, experienceId) {
-export default function(token, experienceId) {
+module.exports = function(token, experienceId) {
     validate.string(token)
     validate.string.notVoid('token', token)
 

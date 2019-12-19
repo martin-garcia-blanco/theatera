@@ -1,5 +1,4 @@
-//module.exports = function(url, { method = 'GET', headers, body } = {}) {
-export default function(url, { method = 'GET', headers, body } = {}) {
+module.exports = function(url, { method = 'GET', headers, body } = {}) {
     return new Promise((resolve, reject) => {
         try {
             var xhr = new XMLHttpRequest
