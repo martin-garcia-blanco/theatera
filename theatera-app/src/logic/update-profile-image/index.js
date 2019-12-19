@@ -13,7 +13,8 @@ const API_URL = process.env.REACT_APP_API_URL
 */
 
 
-module.exports = function (token, image) {
+//module.exports = function (token, image) {
+export default  function (token, image) {
     validate.string(token)
     validate.string.notVoid('token', token)
 
