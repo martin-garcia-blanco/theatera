@@ -1,8 +1,8 @@
-const call = require('../../utils/call')
+import call from '../../utils/call'
 const { validate, errors: { ConflictError } } = require('theatera-util')
 const API_URL = process.env.REACT_APP_API_URL
 
-module.exports = function(token, postId, body) {
+export default function(token, postId, body) {
     validate.string(token)
     validate.string.notVoid('token', token)
 
@@ -17,12 +17,12 @@ module.exports = function(token, postId, body) {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json' 
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({ body, postId })
         })
 
-            
+
 
         if (res.status === 201) return JSON.parse(res.body)
 
