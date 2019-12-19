@@ -1,6 +1,5 @@
 require('dotenv').config()
 const { env: { TEST_DB_URL, SALT } } = process
-console.log(process.env.TEST_DB_URL)
 const bcrypt = require('bcryptjs')
 const { expect } = require('chai')
 const registerUser = require('.')

@@ -18,8 +18,6 @@ export default function(token, title, body, startDate, endDate, type) {
     startDate = startDate.getTime()
     validate.number(endDate)
     validate.number(startDate)
-    console.log(startDate, endDate)
-
     validate.string(type)
     validate.string.notVoid('type', type)
 

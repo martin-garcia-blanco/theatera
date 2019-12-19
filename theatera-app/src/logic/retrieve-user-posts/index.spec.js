@@ -37,7 +37,6 @@ describe('logic - retrieve-user-posts', () => {
 
 
     it('should succeed on correct posts', async() => {
-        console.log(postId1)
         const posts = await retrieveUserPosts(userId)
         posts.forEach(element => {
             expect(element).to.exist

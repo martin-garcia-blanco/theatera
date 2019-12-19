@@ -36,13 +36,10 @@ function AccountResume({history, account:{id:accountId, name, image, introductio
     async function handleSendFriendRequest(e){
         e.preventDefault()
         try{
-            console.log(connections, accountId)
-
             friendRequest = await checkFriendRequest(token, accountId)
         } catch(error){
             setError(error.message)
         }
-        console.log("engadir amigo")
     }
 
     async function handleRemoveFriend(e){
