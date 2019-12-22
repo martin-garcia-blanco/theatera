@@ -1,16 +1,16 @@
-const call = require('../../utils/call')
+import call from '../../utils/call'
 const { validate, errors: { NotFoundError } } = require('theatera-util')
 const API_URL = process.env.REACT_APP_API_URL
 
 
-module.exports = function(token, info) {
+export default function(token, info) {
 
     validate.string(token)
     validate.string.notVoid('token', token)
 
 
-    const {_name:name, _introduction:introduction, _description: description, _age: age, _gender:gender, _languages: languages , _phone: phone, _email: email, _website:website, _city:city, _surname:surname, _height:height, _weight:weight} = info
-   
+    const { _name: name, _introduction: introduction, _description: description, _age: age, _gender: gender, _languages: languages, _phone: phone, _email: email, _website: website, _city: city, _surname: surname, _height: height, _weight: weight } = info
+
 
     if (name) {
         validate.string(name)
@@ -61,22 +61,22 @@ module.exports = function(token, info) {
 
 
     return (async() => {
-        const data = {name, introduction, description,phone, email, website, city, specificInfo:{surname,age:parseInt(age) ,gender,languages,height:parseInt(height),weight:parseInt(weight)}}
+        const data = { name, introduction, description, phone, email, website, city, specificInfo: { surname, age: parseInt(age), gender, languages, height: parseInt(height), weight: parseInt(weight) } }
         const res = await call(`${API_URL}/users//modifyuser`, {
             method: 'PATCH',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json' 
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({data})
+            body: JSON.stringify({ data })
         })
 
-            
 
-        if (res.status === 200) return 
+
+        if (res.status === 200) return
 
         if (res.status === 404) throw new NotFoundError(JSON.parse(res.body).message)
 
-        throw new Error(JSON.parse(res.body).message) 
+        throw new Error(JSON.parse(res.body).message)
     })()
 }

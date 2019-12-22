@@ -1,8 +1,8 @@
-const call = require('../../utils/call')
+import call from '../../utils/call'
 const { validate, errors: { ConflictError } } = require('theatera-util')
 const API_URL = process.env.REACT_APP_API_URL
 
-module.exports = function(chatId, token, body) {
+export default function(chatId, token, body) {
     validate.string(chatId)
     validate.string.notVoid('chatId', chatId)
 
@@ -17,12 +17,12 @@ module.exports = function(chatId, token, body) {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json' 
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({ body, chatId })
         })
 
-        if (res.status === 201) return 
+        if (res.status === 201) return
 
         if (res.status === 409) throw new ConflictError(JSON.parse(res.body).message)
 

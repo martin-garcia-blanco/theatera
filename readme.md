@@ -9,6 +9,8 @@ A project by:
 
 Theatera is a social networking site designed specifically for the audiovisual community. The goal of the site is to allow registered members and companies to establish connections.
 
+## Link to the project (mobile version): https://theatera-app.herokuapp.com
+
 
 
 ## Functional description

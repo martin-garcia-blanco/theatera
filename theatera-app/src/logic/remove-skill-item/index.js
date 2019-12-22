@@ -1,8 +1,8 @@
-const call = require('../../utils/call')
+import call from '../../utils/call'
 const { validate, errors: { NotFoundError } } = require('theatera-util')
 const API_URL = process.env.REACT_APP_API_URL
 
-module.exports = function(token, skill) {
+export default function(token, skill) {
     validate.string(token)
     validate.string.notVoid('token', token)
     validate.string(skill)
@@ -13,7 +13,7 @@ module.exports = function(token, skill) {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json' 
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({ skill })
         })

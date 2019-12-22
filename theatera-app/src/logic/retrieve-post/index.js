@@ -1,9 +1,9 @@
-const call = require('../../utils/call')
+import call from '../../utils/call'
 const { validate, errors: { ConflictError } } = require('theatera-util')
 const API_URL = process.env.REACT_APP_API_URL
 
 
-module.exports = function(token, postId) {
+export default function(token, postId) {
     validate.string(token)
     validate.string.notVoid('token', token)
 

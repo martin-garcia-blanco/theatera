@@ -1,15 +1,15 @@
-const call = require('../../utils/call')
+import call from '../../utils/call'
 const { validate, errors: { ConflictError } } = require('theatera-util')
 const API_URL = process.env.REACT_APP_API_URL
 
-module.exports = function(token, id) {
+export default function(token, id) {
     validate.string(token)
     validate.string.notVoid('token', token)
     validate.string(id)
     validate.string.notVoid('id', id)
 
     return (async() => {
-        
+
         const res = await call(`${API_URL}/users/retrieve-friend-connections/${id}`, {
             method: 'GET',
             headers: {

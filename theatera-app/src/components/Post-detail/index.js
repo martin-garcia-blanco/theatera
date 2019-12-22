@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './index.sass'
 import { withRouter } from 'react-router-dom'
 import {retrievePost, toggleLikePost, sendComment, retrieveUser} from '../../logic'
@@ -16,7 +16,7 @@ function PostDetail({history, postId}){
     const [post, setPost] = useState()
     let postData
     const {id} = sessionStorage
-    let messageText = React.createRef()
+    let messageText = useRef()
     let refresher
     
     
@@ -45,7 +45,7 @@ function PostDetail({history, postId}){
         })()
 
         return () => { clearInterval(refresher)}
-    },[setPost,setUser])
+    },[setPost,setUser,setOwner,setError])
     
 
     async function handleGiveLike(e){
