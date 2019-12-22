@@ -1,7 +1,6 @@
 const { ObjectId, models: { Chat } } = require('theatera-data')
 const { validate, errors: { ContentError, NotFoundError } } = require('theatera-util')
 
-
 /**
  *
  * retrieve an array of messages from a chat
@@ -22,7 +21,5 @@ module.exports = function(chatId) {
         if (!chat) throw new NotFoundError(`chat with id ${chatId} not found`)
 
         return chat.messages
-
-
     })()
 }

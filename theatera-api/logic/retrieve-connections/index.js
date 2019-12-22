@@ -18,7 +18,6 @@ module.exports = function(userId) {
         const user = await User.findById(userId)
         if (!user) throw new NotFoundError(`user with id ${userId} not found`)
 
-
         const result = await Promise.all(user.connections.map(async con => {
             const friendId = con._id.toString()
             const friend = await User.findById(friendId)

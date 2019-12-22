@@ -24,9 +24,9 @@ module.exports = function(userId, postId) {
         const user = await User.findById(userId)
         if (!user) throw new NotFoundError(`user with id ${userId} not found`)
 
-
         const post = await Post.findById(postId)
         if (!post) throw new NotFoundError(`user does not have post with id ${postId}`)
+        
         const removedPost = await Post.remove({ "_id": ObjectId(postId) })
         if (!removedPost) throw new ConflictError('internal Error')
 

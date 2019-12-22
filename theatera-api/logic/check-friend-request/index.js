@@ -1,7 +1,6 @@
 const { validate, errors: { ContentError, NotFoundError, ConflictError } } = require('theatera-util')
 const { ObjectId, models: { User, FriendRequest, Notification } } = require('theatera-data')
 
-
 /**
  *
  * Checks the status of a friend request, 3 ways:
@@ -23,6 +22,7 @@ module.exports = function(emiterId, receiverId) {
     validate.string(receiverId)
     validate.string.notVoid('receiverId', receiverId)
     if (!ObjectId.isValid(receiverId)) throw new ContentError(`${receiverId} is not a valid id`)
+    
     return (async() => {
         const emiter = await User.findById(emiterId)
         if (!emiter) throw new NotFoundError(`user with id ${emiterId} not found`)

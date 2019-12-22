@@ -1,8 +1,6 @@
 const { validate, errors: { ContentError, NotFoundError } } = require('theatera-util')
 const { ObjectId, models: { Chat, User } } = require('theatera-data')
 
-
-
 /**
  *
  * Create chat with both user ids
@@ -21,7 +19,6 @@ module.exports = function(userId1, userId2) {
   validate.string.notVoid('userId2', userId2)
   if (!ObjectId.isValid(userId2)) throw new ContentError(`${userId2} is not a valid id`)
 
-
   return (async() => {
       const user1 = await User.findById(userId1)
       if (!user1) throw new NotFoundError(`user with id ${userId1} not found`)
@@ -29,14 +26,14 @@ module.exports = function(userId1, userId2) {
       const user2 = await User.findById(userId2)
       if (!user2) throw new NotFoundError(`user with id ${userId2} not found`)
 
-      const _chat = await Chat.findOne({
+      let chat = await Chat.findOne({
           users: {
             $all: [ user1.id, user2.id],
             $size: 2
           }
         });
 
-      if (_chat) return chatId=_chat._id 
+      if (chat) return chatId=chat._id 
 
       chat = await Chat.create({ users: [ObjectId(userId1), ObjectId(userId2)] })
 

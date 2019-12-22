@@ -1,7 +1,6 @@
 const { validate, errors: { NotFoundError, ContentError } } = require('theatera-util')
 const { ObjectId, models: { User } } = require('theatera-data')
 
-
 /**
  *
  * retrieve the complete profile data from an user
@@ -35,9 +34,6 @@ module.exports = function(ownerId, id) {
             })
         }
 
-        user.lastAccess = new Date
-        await user.save()
-
         if (user.rol === 'PERSON') {
 
             const { name, image, specificInfo, city, description, skills, experience, rol} = user.toObject()
@@ -49,6 +45,7 @@ module.exports = function(ownerId, id) {
         const { name, image, city, description, skills, experience, rol } = user.toObject()
         let introduction = user.toObject();
         !user.toObject().introduction ? introduction = '' : introduction = user.toObject().introduction.slice(0, 20) + '...'
+        
         return { id, name, image, city, description, skills, experience, introduction, rol, connected }
 
     })()

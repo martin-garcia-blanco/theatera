@@ -1,4 +1,4 @@
-const { ObjectId, models: { User, Post } } = require('theatera-data')
+const { ObjectId, models: { User } } = require('theatera-data')
 const { validate, errors: { ContentError, NotFoundError, ConflictError } } = require('theatera-util')
 
 /**
@@ -24,9 +24,7 @@ module.exports = function(userId, notificationId) {
         const user = await User.findById(userId)
         if (!user) throw new NotFoundError(`user with id ${userId} not found`)
 
-        const notifications = user.notifications
-
-        notifications.forEach((noti, index)=>{
+        user.notifications.forEach((noti, index)=>{
             noti._id.toString() === notificationId && user.notifications.splice(index,1)
         })
         await user.save()

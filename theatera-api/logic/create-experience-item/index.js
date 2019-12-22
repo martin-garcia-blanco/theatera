@@ -1,7 +1,6 @@
 const { validate, errors: { NotFoundError, ConflictError } } = require('theatera-util')
 const { ObjectId, models: { User, ExperienceItem } } = require('theatera-data')
 
-
 /**
  *
  * Create an experienceItem for a user
@@ -42,8 +41,5 @@ module.exports = function(userId, title, body, startDate, endDate, type) {
         await user.experience.push(experienceItem)
         await user.save()
         return experienceItem.id
-
     })()
-
-
 }

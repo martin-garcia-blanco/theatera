@@ -1,4 +1,4 @@
-const { ObjectId, models: { User, ExperienceItem } } = require('theatera-data')
+const { ObjectId, models: { User } } = require('theatera-data')
 const { validate, errors: { ContentError, NotFoundError } } = require('theatera-util')
 
 /**
@@ -23,6 +23,7 @@ module.exports = function(userId, experienceId) {
     return (async() => {
         const user = await User.findById(userId)
         if (!user) throw new NotFoundError(`user with id ${userId} not found`)
+
         const experience = await User.findOne({ "experience._id": ObjectId(experienceId) }, { "experience.$": 1 })
         if (!experience) throw new NotFoundError(`user does not have experience with id ${experienceId}`)
 
@@ -30,7 +31,5 @@ module.exports = function(userId, experienceId) {
         const arr = await user.experience.filter(ele => ele.id !== experienceId)
         user.experience = arr
         await user.save()
-
-        return experienceId
     })()
 }

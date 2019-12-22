@@ -26,14 +26,13 @@ module.exports = function(name, email, password, isCompany = false) {
 
     return (async() => {
         const user = await User.findOne({ email })
-
         if (user) throw new ConflictError(`user with email ${email} already exists`)
 
         password = await bcrypt.hash(password, parseInt(SALT));
 
         let rol
-
         isCompany ? rol = 'COMPANY' : rol = 'PERSON'
+        
         const image = "http://localhost:9000/data/users/defaultimage/profile.png"
         const specificInfo = {
             create:true

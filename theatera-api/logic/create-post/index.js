@@ -23,8 +23,8 @@ module.exports = function(userId, body, type = 'ARTICLE') {
     validate.string.notVoid('type', type)
 
     return (async() => {
-        const _user = await User.findById(userId)
-        if (!_user) throw new NotFoundError(`user with id ${userId} not found`)
+        const user = await User.findById(userId)
+        if (!user) throw new NotFoundError(`user with id ${userId} not found`)
 
         const date = new Date
         const likes = []
@@ -33,6 +33,4 @@ module.exports = function(userId, body, type = 'ARTICLE') {
         const post = await Post.create({ date, type, user: ObjectId(userId), likes, comments, body })
         return post.id
     })()
-
-
 }
