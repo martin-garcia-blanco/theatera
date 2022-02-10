@@ -14,7 +14,7 @@
     },
     "devDependencies": {
         "theatera-data": "file:../theatera-data",
-        "node-sass": "^4.13.0",
+        "node-sass": "^7.0.0",
         "jsonwebtoken": "^8.5.1"
     },
     "scripts": {
